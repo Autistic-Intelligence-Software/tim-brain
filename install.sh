@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Tom.0 Brain Bundle — one-click installer (macOS / Linux)
+# Tim Brain Bundle — one-click installer (macOS / Linux)
 # Installs Ollama (if missing), downloads your chosen AI model, and sets up
-# the start script. Your PC becomes Tom.0's free local "brain" — no API key,
+# the start script. Your PC becomes Tim's free local "brain" — no API key,
 # no per-message cost.
 set -euo pipefail
 
 echo "=============================================="
-echo "  Tom.0 Brain Bundle — installer"
+echo "  Tim Brain Bundle — installer"
 echo "=============================================="
 echo
 
@@ -44,23 +44,23 @@ echo "      Model ready."
 # ---- 3. Start script ----
 cat > start-brain.sh << 'EOF'
 #!/usr/bin/env bash
-# Starts your Tom.0 brain (Ollama serving the installed model).
+# Starts your Tim brain (Ollama serving the installed model).
 set -euo pipefail
 cd "$(dirname "$0")"
 MODEL="$(cat .tomo-model 2>/dev/null || echo dolphin-llama3)"
-echo "Starting Tom.0 brain (model: $MODEL)..."
+echo "Starting Tim brain (model: $MODEL)..."
 echo "Local API: http://localhost:11434"
 echo
 echo "NEXT STEPS (one time):"
 echo "  1. Expose this PC to the internet, e.g.:  ngrok http 11434"
-echo "  2. In the Tom.0 dashboard, set AI provider = Custom endpoint,"
+echo "  2. In the Tim dashboard, set AI provider = Custom endpoint,"
 echo "     model = $MODEL, endpoint URL = your tunnel URL."
-echo "  3. Keep this window open while you want Tom.0 to use your brain."
+echo "  3. Keep this window open while you want Tim to use your brain."
 echo
 ollama serve
 EOF
 chmod +x start-brain.sh
 
 echo
-echo "[3/3] Done! Run ./start-brain.sh whenever you want Tom.0 to use your PC."
+echo "[3/3] Done! Run ./start-brain.sh whenever you want Tim to use your PC."
 echo "      First-time setup continues in the README (tunnel + dashboard step)."
