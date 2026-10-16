@@ -1,12 +1,12 @@
 @echo off
-REM Tom.0 Brain Bundle - one-click installer (Windows)
+REM Tim Brain Bundle - one-click installer (Windows)
 REM Installs Ollama (if missing), downloads your chosen AI model, and sets up
-REM the start script. Your PC becomes Tom.0's free local "brain" - no API key,
+REM the start script. Your PC becomes Tim's free local "brain" - no API key,
 REM no per-message cost.
 setlocal EnableDelayedExpansion
 
 echo ==============================================
-echo   Tom.0 Brain Bundle - installer
+echo   Tim Brain Bundle - installer
 echo ==============================================
 echo.
 
@@ -54,21 +54,21 @@ echo       Model ready.
 REM ---- 3. Start script ----
 (
 echo @echo off
-echo REM Starts your Tom.0 brain (Ollama serving the installed model).
+echo REM Starts your Tim brain (Ollama serving the installed model).
 echo set /p MODEL=^<.tomo-model
-echo echo Starting Tom.0 brain (model: %%MODEL%%^)...
+echo echo Starting Tim brain (model: %%MODEL%%^)...
 echo echo Local API: http://localhost:11434
 echo echo.
 echo echo NEXT STEPS (one time^):
 echo echo   1. Expose this PC to the internet, e.g.:  ngrok http 11434
-echo echo   2. In the Tom.0 dashboard, set AI provider = Custom endpoint,
+echo echo   2. In the Tim dashboard, set AI provider = Custom endpoint,
 echo echo      model = %%MODEL%%, endpoint URL = your tunnel URL.
-echo echo   3. Keep this window open while you want Tom.0 to use your brain.
+echo echo   3. Keep this window open while you want Tim to use your brain.
 echo echo.
 echo ollama serve
 ) > start-brain.bat
 
 echo.
-echo [3/3] Done! Run start-brain.bat whenever you want Tom.0 to use your PC.
+echo [3/3] Done! Run start-brain.bat whenever you want Tim to use your PC.
 echo       First-time setup continues in the README (tunnel + dashboard step).
 pause
